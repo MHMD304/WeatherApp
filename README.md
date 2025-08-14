@@ -16,7 +16,7 @@ A beautiful, responsive weather forecast application that provides 7-day weather
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-github-username.github.io/WeatherApp/)
+[View Live Demo](https://github.com/MHMD304/WeatherApp.git)
 
 ## 📋 Table of Contents
 
@@ -123,10 +123,6 @@ The app integrates with the **7Timer API** to fetch real-time weather data:
 ![Mobile View](screenshots/mobile-view.png)
 *Fully responsive design that works on all devices*
 
-### Loading State
-![Loading](screenshots/loading.png)
-*Smooth loading animation while fetching weather data*
-
 ## 🎥 Video Demo
 
 [![Weather App Demo](screenshots/video-thumbnail.mp4)]
@@ -198,9 +194,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **GitHub**: [@your-username](https://github.com/your-username)
-- **Email**: your.email@example.com
-- **Project Link**: [https://github.com/your-username/WeatherApp](https://github.com/your-username/WeatherApp)
+- **GitHub**: [@MHMD304](https://github.com/MHMD304)
+- **Email**: slymanmhamad86@gmail.com
+- **Project Link**: [https://github.com/your-username/WeatherApp.git](https://github.com/your-username/WeatherApp.git)
 
 ---
 
