@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* 
+{ 
+  margin:0;
+  padding:0; 
+  box-sizing:border-box; 
+
+}
+html, body { 
+  height: 100%; 
+  font-family: 'Inter', sans-serif; 
+  overflow-x:hidden; 
+}
+
+body 
+{
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff; position: relative;
+}
+
+.container 
+{ 
+   position: relative;
+   z-index: 2; 
+   max-width: 1200px; 
+}
+.header-section { 
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom:2rem; 
+}
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Sets font size: min 2.5rem, max 4rem, flexible 5% of viewport width */
+  font-weight: 700; /* Makes the font bold */
+  background: linear-gradient(45deg, #fff, #e0e7ff); /* Creates a gradient background at a 45-degree angle */
+  -webkit-background-clip: text; /* Clips the background to the text shape (for WebKit browsers like Chrome/Safari) */
+  background-clip: text; /* Clips the background to the text shape (for other browsers) */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent so the gradient shows through */
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Adds a shadow below the text (x-offset, y-offset, blur, color) */
+  margin-bottom: 0.5rem; /* Adds space below the title */
+}
+.subtitle {
+  font-size:1.2rem;
+  color: rgba(255,255,255,0.8); 
+  font-weight:300; display:flex; 
+  align-items:center; 
+  justify-content:center;
+  gap:0.5rem; 
+}
+.weather-icon-header { 
+  font-size: 2rem; /* Set the icon size to 2 rem units (relative to root font size) */
+  animation: float 3s ease-in-out infinite; /* Apply the 'float' animation for 3 seconds, smooth start & end, loop forever */
+  display: inline-block; /* Make sure the element can have width/height and transform effects */
+}
+
+@keyframes float { 
+  0%, 100% { 
+    transform: translateY(0); /* At the start and end, the icon is in its original position */
+  } 
+  50% { 
+    transform: translateY(-10px); /* Halfway through the animation, move the icon up by 10px */
+  } 
+}
+
+/* Dropdown */
+.dropdown-container {
+    display:flex; 
+    justify-content:center;
+    margin-bottom:3rem; 
+    position:relative; 
+  }
+#cityDropdown {
+  /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.15);
+
+  /* Glassmorphism blur effect for background */
+  backdrop-filter: blur(20px);
+
+  /* Semi-transparent white border */
+  border: 2px solid rgba(255,255,255,0.2);
+
+  /* White text color */
+  color: white;
+
+  /* Medium font weight */
+  font-weight: 500;
+
+  /* Slightly larger font size */
+  font-size: 1.1rem;
+
+  /* Inner spacing: 1rem top/bottom, 2rem left/right */
+  padding: 1rem 2rem;
+
+  /* Fully rounded corners (pill shape) */
+  border-radius: 50px;
+
+  /* Smooth transition for all properties */
+  transition: all 0.3s;
+
+  /* Soft drop shadow */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+  /* Positioned relative to allow absolutely positioned children */
+  position: relative;
+}
+
+#cityDropdown:hover { 
+  background: rgba(255,255,255,0.25); 
+  transform:translateY(-2px); 
+  border-color: rgba(255,255,255,0.4); 
+  box-shadow:0 12px 40px rgba(0,0,0,0.2); 
+}
+.dropdown-menu { 
+  background: rgba(255,255,255,0.95);       /* Semi-transparent white background */
+  backdrop-filter: blur(20px);              /* Adds a blur effect to content behind the dropdown */
+  border-radius:20px;                        /* Rounded corners */
+  max-height:300px;                          /* Maximum height for the dropdown */
+  overflow-y:auto;                           /* Enables vertical scroll if content exceeds max height */
+  margin-top:10px;                           /* Space between button and dropdown */
+  padding:0.5rem 0;                          /* Vertical padding inside dropdown */
+}
+
+
+.dropdown-item { 
+  color:#333;                                /* Text color dark gray */
+  padding:0.8rem 1.5rem;                     /* Padding around each item */
+  font-weight:500;                            /* Medium font weight */
+  transition:all 0.2s ease;                  /* Smooth transition for hover effects */
+}
+
+
+.dropdown-item i { 
+  width:20px;                                /* Fixed width for the icon */
+  display:inline-block;                       /* So that margin and rotation works properly */
+  margin-right:10px;                          /* Space between icon and text */
+  transition: transform 0.3s ease;           /* Smooth animation for icon rotation and scaling */
+}
+
+.dropdown-item:hover { 
+  background: linear-gradient(90deg,#667eea,#764ba2); /* Gradient background on hover */
+  color:white;                                        /* Text color turns white on hover */
+  transform:translateX(5px);                          /* Slight horizontal move to the right */
+}
+
+
+
+.dropdown-item:hover i { 
+  transform:rotate(15deg) scale(1.2);        /* Rotate the icon and make it slightly bigger on hover */
+}
+
+
+/* Forecast cards */
+#forecast {
+  display: flex;                               /* Arrange child elements in a horizontal row */
+  flex-wrap: nowrap;                           /* Prevent items from wrapping to the next line */
+  overflow-x: auto;                            /* Add horizontal scrollbar if content overflows */
+  gap: 1.5rem;                                 /* Space between each child element */
+  padding: 2rem 1rem;                          /* Padding inside the container (top/bottom 2rem, left/right 1rem) */
+  background: rgba(255,255,255,0.1);           /* Semi-transparent white background */
+  backdrop-filter: blur(20px);                 /* Blur effect behind the container (frosted glass effect) */
+  border-radius: 25px;                         /* Rounded corners of the container */
+  border: 1px solid rgba(255,255,255,0.2);    /* Semi-transparent border around the container */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);    /* Soft shadow behind the container for depth */
+}
+#forecast::-webkit-scrollbar { height:8px; }
+#forecast::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);  /* The draggable part of the scrollbar has a gradient color */
+  border-radius: 10px;                                   /* Rounded corners for the scrollbar thumb */
+}
+
+
+.weather-card {
+  background: rgba(255,255,255,0.15); 
+  backdrop-filter: blur(20px);
+  border-radius:20px;
+  padding:1.5rem;
+  text-align:center; 
+  flex:0 0 auto; 
+  width:200px;
+  transition: all 0.3s;
+  position:relative; 
+  overflow:hidden;
+}
+.weather-card:hover { transform: translateY(-10px) scale(1.02); background: rgba(255,255,255,0.25); box-shadow:0 25px 80px rgba(0,0,0,0.3); }
+
+.card-date { font-size:1.1rem; font-weight:600; margin-bottom:1rem; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,0.3); }
+.weather-icon { width:80px; height:80px; margin:1rem auto; font-size:3rem; animation: float 2s ease-in-out infinite; }
+.temp-display { font-size:2rem; font-weight:700; color:#fff; text-shadow:0 2px 4px rgba(0,0,0,0.3); margin:0.5rem 0; }
+
